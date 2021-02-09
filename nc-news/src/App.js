@@ -9,7 +9,10 @@ function App() {
     <div className="App">
       <Title />
       <Nav />
-      <ArticlesList />
+      <Router>
+        <ArticlesList path="/" />
+        <ArticlesList path="/:topic" />
+      </Router>
     </div>
   );
 }

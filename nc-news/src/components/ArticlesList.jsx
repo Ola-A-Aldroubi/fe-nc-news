@@ -10,17 +10,25 @@ class ArticlesList extends Component {
   };
 
   componentDidMount() {
-    this.fetchArticles();
+    const { topic } = this.props;
+    this.fetchArticles(topic);
+  }
+  componentDidUpdate(prevProps) {
+    const { topic } = this.props;
+    if (topic !== prevProps.topic) {
+      this.fetchArticles(topic);
+    }
   }
 
-  fetchArticles() {
-    api.getArticles().then((articles) => {
-      this.setState({ articles });
+  fetchArticles(topic) {
+    api.getArticles(topic).then((articles) => {
+      this.setState({ articles: articles, isLoading: false });
     });
   }
 
   render() {
     const { articles } = this.state;
+    console.log(articles);
     return (
       <main className="list">
         {articles.map((article) => {
