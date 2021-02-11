@@ -9,8 +9,13 @@ export const getTopics = () => {
     return data.topics;
   });
 };
-export const getArticles = (topic) => {
-  return request.get("/articles", { params: { topic } }).then(({ data }) => {
+export const getArticles = (topic, order) => {
+  return request.get("/articles", { params:  topic }).then(({ data }) => {
     return data.articles;
   });
 };
+export const getArticleById = (article_id)=>{
+  return request.get(`/articles/${article_id}`).then(({data})=>{
+      return data;
+  })
+}

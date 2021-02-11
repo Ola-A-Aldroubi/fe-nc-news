@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as api from "../api";
 import ArticleCard from "../components/ArticleCard";
+import Sort from "../components/Sort";
 import Title from "./Title";
 
 class ArticlesList extends Component {
@@ -28,9 +29,10 @@ class ArticlesList extends Component {
 
   render() {
     const { articles } = this.state;
-    console.log(articles);
+
     return (
       <main className="list">
+        <Sort />
         {articles.map((article) => {
           return <ArticleCard key={article.article_id} {...article} />;
         })}
