@@ -33,3 +33,13 @@ a {
 .commentCard {
     border: 4px purple solid;
 }
+.votes{
+    height: 40px;
+    display:flex;
+    flex-direction: row;
+    border:lightcoral solid;
+    justify-content:space-around;
+}
+button:active{
+    background-color: lawngreen;
+}
