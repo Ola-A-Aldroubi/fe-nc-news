@@ -1,11 +1,12 @@
 import React from 'react';
+import VotesUpdater from "./VotesUpdater";
 
-const CommentCard = ({author,body,votes}) => {
+const CommentCard = ({comment_id,author,body,votes}) => {
     return (
         <div className="commentCard">
            <p>By : {author}</p>
             <p> {body}</p>
-            <p>votes :{votes}</p>         
+            <VotesUpdater element="comments" votes={votes} id={comment_id} />         
         </div>
     );
 }

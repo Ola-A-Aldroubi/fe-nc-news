@@ -13,7 +13,7 @@ const ArticleCard = ({ article_id,title, topic, votes, comments_count, author })
       <p>author : {author}</p>
       <p>topic : {topic}</p>
       <p>comments:{comments_count}</p>
-      <VotesUpdater votes={votes} id={article_id} />
+      <VotesUpdater element="articles" votes={votes} id={article_id} />
     </div>
   );
 };

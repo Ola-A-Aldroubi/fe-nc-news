@@ -12,7 +12,7 @@ class VotesUpdater extends Component {
             <div className="votes">
                 <button disabled={newVote ===1} onClick={()=>{
                     this.handleClick(-1)}  } >dislike</button>
-                <p>{votes+newVote}</p>
+                <p>likes: {votes+newVote}</p>
                 <button disabled={newVote ===-1} onClick={()=>{
                     this.handleClick(1)}}>like</button>
 
@@ -21,11 +21,12 @@ class VotesUpdater extends Component {
     }
     handleClick =(inc_vote)=>{
         const{id}=this.props;
+        const{element}=this.props;
         const newVote =this.state.newVote
         
         if(newVote!==0)  {
             inc_vote=-(inc_vote) }
-        api.updateVotes(id,inc_vote).then(()=>{
+        api.updateVotes(element,id,inc_vote).then(()=>{
             this.setState((currentState)=>{
                 return {newVote:currentState.newVote+inc_vote}
             })

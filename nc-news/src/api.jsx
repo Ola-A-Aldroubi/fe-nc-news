@@ -27,8 +27,8 @@ export const getCommentsByArticleId = (article_id)=>{
   })
   
 }
-export const updateVotes =(id,vote)=>{
-  return request.patch(`articles/${id}`,{
+export const updateVotes =(element,id,vote)=>{
+  return request.patch(`/${element}/${id}`,{
     inc_votes : vote
   })
 }
