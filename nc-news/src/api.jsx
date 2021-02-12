@@ -32,3 +32,8 @@ export const updateVotes =(element,id,vote)=>{
     inc_votes : vote
   })
 }
+export const postComment =(name,article_id,comment)=>{
+  return request.post(`/articles/${article_id}/comments`,{username:`${name}`,body:`${comment}`}).then(({data})=>{
+      return data.comment;
+  })
+}

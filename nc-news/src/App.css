@@ -32,6 +32,7 @@ a {
 
 .commentCard {
     border: 4px purple solid;
+
 }
 .votes{
     height: 40px;
@@ -42,4 +43,8 @@ a {
 }
 button:active{
     background-color: lawngreen;
+}
+.commentAdder{
+    border: 4px red solid;
+    margin-top: 10px;
 }
