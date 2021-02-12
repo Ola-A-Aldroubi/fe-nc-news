@@ -7,15 +7,15 @@
 }
 
 .title {
-    border: 4px green solid;
+    border: 1px green solid;
 }
 
 .nav {
-    border: 4px blue solid;
+    border: 1px blue solid;
 }
 
 .list {
-    border: 4px red solid;
+    border: 1px red solid;
 }
 
 .article_card {
@@ -23,7 +23,7 @@
 }
 
 a {
-    padding: 20px;
+    padding : 20px;
 }
 
 .single_article {

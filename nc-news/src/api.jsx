@@ -10,8 +10,7 @@ export const getTopics = () => {
   });
 };
 export const getArticles = (topic) => {
-  return request.get("/articles", { params:  topic }).then((data) => {
-    console.log(data)
+  return request.get("/articles", { params: {topic}  }).then(({data}) => {
     return data.articles;
    
 

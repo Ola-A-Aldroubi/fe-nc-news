@@ -14,7 +14,7 @@ class ArticlesList extends Component {
     const { topic } = this.props;
     this.fetchArticles(topic);
   }
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps) {  
     const { topic } = this.props;
     if (topic !== prevProps.topic) {
       this.fetchArticles(topic);
@@ -24,22 +24,23 @@ class ArticlesList extends Component {
   fetchArticles(topic) {
     api.getArticles(topic).then((articles) => {
       this.setState({ articles: articles, isLoading: false });
-      console.log(this.state.articles)
     });
   }
 
   render() {
-    const { articles } = this.state;
+    const  articles  = this.state.articles; 
+
 
     return (
       <main className="list">
-        <Sort />
-        {articles.map((article) => {
-          return <ArticleCard key={article.article_id} {...article} />;
+      <Title />
+      {articles.map((article) => {
+        return <ArticleCard key={article.article_id} {...article} />;
         })}
       </main>
     );
   }
 }
+
 
 export default ArticlesList;
