@@ -7,8 +7,7 @@ import ArticlesList from "./components/ArticlesList";
 import Sort from "./components/Sort";
 
 function App() {
-    return ( <
-        div className = "App" >
+    return ( < div className = "App" >
         <
         Title / >
         <
@@ -21,9 +20,9 @@ function App() {
         ArticlesList path = "/:topic" / >
         <
         SingleArticle path = "/article/:article_id" / >
+
         <
-        /Router> < /
-        div >
+        /Router >  </div >
     );
 }
 

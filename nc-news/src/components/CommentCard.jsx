@@ -1,9 +1,11 @@
 import React from 'react';
 
-const CommentCard = ({}) => {
+const CommentCard = ({author,body,votes}) => {
     return (
-        <div>
-            
+        <div className="commentCard">
+           <p>By : {author}</p>
+            <p> {body}</p>
+            <p>votes :{votes}</p>         
         </div>
     );
 }

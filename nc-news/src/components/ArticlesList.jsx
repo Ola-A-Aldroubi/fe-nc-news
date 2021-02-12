@@ -24,6 +24,7 @@ class ArticlesList extends Component {
   fetchArticles(topic) {
     api.getArticles(topic).then((articles) => {
       this.setState({ articles: articles, isLoading: false });
+      console.log(this.state.articles)
     });
   }
 

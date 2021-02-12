@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import * as api from "../api";
 import Loader from "../components/Loader"
 import { Link } from "@reach/router";
+import CommentsList from "./CommentsList";
 
 class SinglrArticle extends Component {
     state = 
@@ -28,8 +29,8 @@ class SinglrArticle extends Component {
                 <h3>{article[0].title}</h3>   <h4>written by : {article[0].author}</h4>  
                 <p>{article[0].body}</p>
                 <p>comments:{article[0].comment_count}</p>
-                <p>votes:{article[0].votes}</p>    
- 
+                <p>votes:{article[0].votes}</p> 
+                <CommentsList article_id={this.props} />   
             </main>        );
     }
 }

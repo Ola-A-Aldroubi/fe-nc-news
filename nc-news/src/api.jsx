@@ -9,13 +9,22 @@ export const getTopics = () => {
     return data.topics;
   });
 };
-export const getArticles = (topic, order) => {
-  return request.get("/articles", { params:  topic }).then(({ data }) => {
+export const getArticles = (topic) => {
+  return request.get("/articles", { params:  topic }).then((data) => {
+    console.log(data)
     return data.articles;
+   
+
   });
 };
 export const getArticleById = (article_id)=>{
   return request.get(`/articles/${article_id}`).then(({data})=>{
       return data;
   })
+}
+export const getCommentsByArticleId = (article_id)=>{
+  return request.get(`/articles/${article_id}/comments`).then(({data})=>{
+    return data.comments;
+  })
+  
 }

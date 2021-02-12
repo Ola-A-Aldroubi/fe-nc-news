@@ -10,6 +10,7 @@ class Nav extends Component {
   fetchTopics() {
     api.getTopics().then((topics) => {
       this.setState({ topics });
+      console.log(this.state.topics)
     });
   }
 
